@@ -2,9 +2,10 @@ import type { Action, ThunkAction } from "@reduxjs/toolkit"
 import { combineSlices, configureStore } from "@reduxjs/toolkit"
 import { setupListeners } from "@reduxjs/toolkit/query"
 import { counterSlice } from "./redux/counter/counterSlice"
+import { feedbackSlice } from "./redux/feedback/feedbackSlice"
 
 // Шаг 8. - Передача counterSlice в combineSlice
-const rootReducer = combineSlices(counterSlice)
+const rootReducer = combineSlices(counterSlice, feedbackSlice)
 // Infer the `RootState` type from the root reducer
 export type RootState = ReturnType<typeof rootReducer>
 
